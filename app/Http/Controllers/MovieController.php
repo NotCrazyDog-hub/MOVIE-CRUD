@@ -68,6 +68,6 @@ class MovieController extends Controller
     {
         $movie = Movie::find($id);
         $movie->delete();
-        return redirect()->back();
+        return redirect()->route('movies.index');
     }
 }
