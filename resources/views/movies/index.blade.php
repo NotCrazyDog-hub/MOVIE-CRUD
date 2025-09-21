@@ -11,12 +11,7 @@
     <ul>
         @foreach ($movies as $movie)
         <li>
-            {{ $movie->id }} - {{ $movie->title }} | <a href="{{ route('movies.edit', ['movie' => $movie->id]) }}">Editar</a> | 
-            <form action="{{ route('movies.destroy', ['movie' => $movie->id]) }}" method="post">
-                @csrf
-                @method('delete')
-                <input type="submit" onclick="return confirm('Tem certeza que deseja deletar esse filme?')" value="Deletar">
-            </form>
+            {{ $movie->id }} - {{ $movie->title }} | <a href="{{ route('movies.edit', ['movie' => $movie->id]) }}">Editar</a> | <a href="{{ route('movies.show', ['movie' => $movie->id])}}">Mostrar</a>
         </li>
         @endforeach
     </ul>
