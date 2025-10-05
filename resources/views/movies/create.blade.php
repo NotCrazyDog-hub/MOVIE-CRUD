@@ -11,19 +11,15 @@
         @csrf
         <label for="title">Título do filme:</label>
         <input type="text" name="title">
-        <br>
 
         <label for="synopsis">Sinopse do filme:</label>
         <textarea name="synopsis"></textarea>
-        <br>
 
         <label for="duration">Duração do filme (em minutos)"</label>
         <input type="number" name="duration">
-        <br>
 
         <label for="release_year">Ano de lançamento</label>
         <input type="number" name="release_year">
-        <br>
 
         <input type="submit" value="Cadastrar">
     </form>
