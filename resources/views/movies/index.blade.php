@@ -1,19 +1,29 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Catálogo de filmes</title>
-</head>
-<body>
-    <h1>Catálogo de filmes</h1>
-    <a href="{{ route('movies.create') }}">+ Cadastrar filme</a>
-    <ul>
-        @foreach ($movies as $movie)
-        <li>
-            {{ $movie->id }} - {{ $movie->title }} | <a href="{{ route('movies.edit', ['movie' => $movie->id]) }}">Editar</a> | <a href="{{ route('movies.show', ['movie' => $movie->id])}}">Mostrar</a>
-        </li>
-        @endforeach
-    </ul>
-</body>
-</html>
+@extends('layouts.layout')
+
+@section('title', 'Catálogo de Filmes')
+
+@section('content')
+<h1>Catálogo de filmes</h1>
+<a class="btn-add" href="{{ route('movies.create') }}">+ Cadastrar filme</a>
+<ul class="movie-list">
+    @foreach ($movies as $movie)
+    <li>
+        <div class="movie-info">
+            <span class="movie-id">#{{ $movie->id }}:</span>
+            <span class="movie-title">{{ $movie->title }}</span>
+        </div>
+        <div class="actions">
+            <nav>
+                <a class="btn-action" href="{{ route('movies.edit', ['movie' => $movie->id]) }}">Editar</a>
+                <a class="btn-action" href="{{ route('movies.show', ['movie' => $movie->id]) }}">Mostrar detalhes</a>
+            </nav>
+            <form action="{{ route('movies.destroy', ['movie' => $movie->id]) }}" method="post">
+                @csrf
+                @method('delete')
+                <input type="submit" class="btn-delete" onclick="return confirm('Tem certeza que deseja deletar esse filme do seu catálogo?')" value="Deletar">
+            </form>
+        </div>
+    </li>
+    @endforeach
+</ul>
+@endsection
