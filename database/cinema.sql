@@ -155,7 +155,7 @@ CREATE TABLE IF NOT EXISTS `movies` (
 --
 
 INSERT INTO `movies` (`id`, `title`, `synopsis`, `duration`, `release_year`, `created_at`, `updated_at`) VALUES
-(1, 'A Bailarina', 'Uma sonhadora menina órfã toma uma atitude arriscada: fugir para Paris e realizar o sonho de ser uma grande bailarina. Lá, ela decide se passar por outra pessoa, e consegue uma vaga no Grand Opera, onde vai aprontar muitas aventuras.', 89, '2017', NULL, NULL);
+(1, 'A Bailarina', 'Uma sonhadora menina órfã toma uma atitude arriscada: fugir para Paris e realizar o sonho de ser uma grande bailarina. Lá, ela decide se passar por outra pessoa, e consegue uma vaga no Grand Opera, onde vai aprontar muitas aventuras', 89, '2017', NULL, NULL);
 
 -- --------------------------------------------------------
 
