@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filme</title>
-</head>
-<body>
-    <h1>{{ $movie->title }}</h1>
-    <p>{{ $movie->synopsis }}</p>
-    <p>Tem duração de {{ $movie->duration }} minutos</p>
-    <p>Lançado em: {{ $movie->release_year }}</p>
-</body>
-</html>
+@extends('layouts.layout')
+
+@section('title', 'Detalhes do Filme')
+
+@section('content')
+    <h1>Detalhes do filme "{{ $movie->title }}"</h1>
+    <div class="movie-details">
+        <p>Sinopse: {{ $movie->synopsis }}.</p>
+        <p>Duração: {{ $movie->duration }} minutos</p>
+        <p>Lançado em: {{ $movie->release_year }}</p>
+    </div>
+@endsection
