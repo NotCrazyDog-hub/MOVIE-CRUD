@@ -9,14 +9,22 @@
     <h1>Cadastro de filme</h1>
     <form action="{{ route('movies.store') }}" method="post">
         @csrf
-        <input type="text" name="title" placeholder="Título do filme">
+        <label for="title">Título do filme:</label>
+        <input type="text" name="title">
         <br>
-        <textarea name="synopsis" placeholder="Sinopse do filme"></textarea>
+
+        <label for="synopsis">Sinopse do filme:</label>
+        <textarea name="synopsis"></textarea>
         <br>
-        <input type="number" name="duration" placeholder="Duração do filme (em minutos)">
+
+        <label for="duration">Duração do filme (em minutos)"</label>
+        <input type="number" name="duration">
         <br>
-        <input type="number" name="release_year" placeholder="Ano de lançamento">
+
+        <label for="release_year">Ano de lançamento</label>
+        <input type="number" name="release_year">
         <br>
+
         <input type="submit" value="Cadastrar">
     </form>
 </body>
