@@ -12,12 +12,12 @@
     <label for="synopsis">Sinopse do filme:</label>
     <textarea name="synopsis"></textarea>
 
-    <label for="duration">Duração do filme (em minutos)"</label>
+    <label for="duration">Duração do filme (em minutos):</label>
     <input type="number" name="duration">
 
-    <label for="release_year">Ano de lançamento</label>
+    <label for="release_year">Ano de lançamento:</label>
     <input type="number" name="release_year">
 
-    <input type="submit" value="Cadastrar">
+    <input class="btn-submit" type="submit" value="Cadastrar">
 </form>
 @endsection
