@@ -156,3 +156,12 @@ h1 {
 .btn-submit:hover {
     background-color: #d62c2c;
 }
+
+.movie-details {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 25px 20px;
+    color: #f5f5f5;
+    font-weight: bold;
+    line-height: 1.5; 
+}
