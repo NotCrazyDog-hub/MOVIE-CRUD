@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Cadastro de filme</h1>
-    <form action="{{ route('movies.store') }}" method="post">
+    <form class="forms" action="{{ route('movies.store') }}" method="post">
         @csrf
         <label for="title">Título do filme:</label>
         <input type="text" name="title">
