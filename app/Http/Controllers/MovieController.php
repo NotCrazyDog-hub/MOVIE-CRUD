@@ -38,7 +38,7 @@ class MovieController extends Controller
      */
     public function show(string $id)
     {
-        $movie = Movie::find($id);
+        $movie = Movie::findOrFail($id);
         return view('movies.show', ['movie' => $movie]);
     }
 
@@ -47,7 +47,7 @@ class MovieController extends Controller
      */
     public function edit(string $id)
     {
-        $movie = Movie::find($id);
+        $movie = Movie::findOrFail($id);
         return view('movies.edit', ['movie' => $movie]);
     }
 
@@ -56,7 +56,7 @@ class MovieController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $movie = Movie::find($id);
+        $movie = Movie::findOrFail($id);
         $movie->update($request->except(['_token', '_method']));
         return redirect()->route('movies.index');
     }
@@ -66,7 +66,7 @@ class MovieController extends Controller
      */
     public function destroy(string $id)
     {
-        $movie = Movie::find($id);
+        $movie = Movie::findOrFail($id);
         $movie->delete();
         return redirect()->back();
     }
